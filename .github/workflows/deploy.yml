@@ -20,8 +20,6 @@ jobs:
           MONGODB_INITDB_ROOT_USERNAME: root
           MONGODB_INITDB_ROOT_PASSWORD: example
           
-
-        options: --healthcheck-interval=5s --healthcheck-timeout=30s --healthcheck-retries=3
         
     environment: testing
     runs-on: ubuntu-latest
