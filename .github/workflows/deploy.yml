@@ -14,16 +14,20 @@ jobs:
     services:
       mongodb:
         image: mongo:latest
+        ports:
+          - 27017:27017
         env:
           MONGODB_INITDB_ROOT_USERNAME: root
           MONGODB_INITDB_ROOT_PASSWORD: example
+          
+
         options: --healthcheck-interval=5s --healthcheck-timeout=30s --healthcheck-retries=3
         
     environment: testing
     runs-on: ubuntu-latest
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb
-      MONGODB_CLUSTER_ADDRESS: mongodb
+      MONGODB_CLUSTER_ADDRESS: localhost:27017
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: example
       PORT: 8080
