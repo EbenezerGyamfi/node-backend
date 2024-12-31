@@ -17,8 +17,6 @@ jobs:
         env:
           MONGODB_INITDB_ROOT_USERNAME: root
           MONGODB_INITDB_ROOT_PASSWORD: example
-        ports:
-          - 27017:27017
         options: --healthcheck-interval=5s --healthcheck-timeout=30s --healthcheck-retries=3
         
     environment: testing
